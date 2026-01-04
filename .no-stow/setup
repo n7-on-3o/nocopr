@@ -1,0 +1,34 @@
+#!/bin/bash
+
+sudo dnf install @hardware-support
+
+sudo dnf install \
+    brightnessctl \
+    firefox \
+    flatpak \
+    git \
+    google-noto-sans-cjk-vf-fonts \
+    kitty \
+    nautilus \
+    neovim \
+    niri \
+    nu \
+    pavucontrol \
+    stow \
+    swaybg \
+    swayidle \
+    swaync \
+    tar \
+    tuigreet \
+    zip
+
+sudo curl -sS https://starship.rs/install.sh | sh
+mkdir ($nu.data-dir | path join "vendor/autoload")
+starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
+
+sudo dnf remove alacritty
+
+sudo flatpak remote-add --if-not-exists flathub \
+    https://dl.flathub.org/repo/flathub.flatpakrepo
+
+flatpak install flathub io.github.kolunmi.Bazaar

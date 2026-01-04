@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Define the options with Nerd Font icons and Kanji
+# 󰐥 電源オフ (Power Off)
+# 󰜉 再起動 (Reboot)
+# 󰤄 スリープ (Suspend)
+# 󰗼 ログアウト (Logout)
+# 󰌾 ロック (Lock)
+
+SELECTION=$(echo -e "󰐥 Poweroff\n󰜉 Reboot\n󰤄 Suspend\n󰗼 Quit\n󰌾 Lock" | \
+    fuzzel --dmenu \
+#           --indent 20 \
+           --lines 5 \
+           --width 15 \
+           --tabs 4 \
+           --placeholder "さよなら..." \
+           --prompt "󰐥 ")
+
+case "$SELECTION" in
+    *"Poweroff")
+        systemctl poweroff
+        ;;
+    *"Reboot")
+        systemctl reboot
+        ;;
+    *"Suspend")
+        systemctl suspend
+        ;;
+    *"Quit")
+        niri msg action quit
+        ;;
+    *"Lock")
+        niri-lock
+        ;;
+esac

@@ -1,0 +1,79 @@
+{
+    "layer": "top",
+    "position": "top",
+    "margin-top": 8,
+    "margin-left": 12,
+    "margin-right": 12,
+    "spacing": 10, // Distance between the islands
+
+    "modules-left": ["niri/workspaces", "niri/window"],
+    "modules-center": ["clock"],
+    "modules-right": [
+        "group/hardware",
+        "group/utils",
+        "custom/notification",
+        "custom/power"],
+
+    // Grouping modules to create unified islands
+    "group/hardware": {
+        "orientation": "horizontal",
+        "modules": ["backlight", "pulseaudio"]
+    },
+    "group/utils": {
+        "orientation": "horizontal",
+        "modules": ["network", "battery"]
+    },
+
+    "niri/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "一",
+            "2": "二",
+            "3": "三",
+            "4": "四",
+            "5": "五",
+            "6": "六",
+            "7": "七",
+            "8": "八",
+            "9": "九",
+            "10": "十",
+            "default": "々"
+        }
+    },
+    
+    "clock": {
+        "format": " <span color='#b7bdf8'>󰃭</span> {:%a %d %b  <span color='#c6a0f6'>󰥔</span> %H:%M}"
+    },
+
+    "pulseaudio": { "format": "{icon} {volume}%", "format-icons": ["󰕿", "󰖀", "󰕾"] },
+    "backlight": { "format": "󰃠 {percent}%" },
+    "network": { "format-wifi": "", "format-disconnected": "󰖪" },
+    "battery": { "format": "{icon} {capacity}%", "format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"] },
+
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "󱅫",
+            "none": "󰂚",
+            "dnd-notification": "󱏧",
+            "dnd-none": "󱏧",
+            "inhibited-notification": "󱅫",
+            "inhibited-none": "󰂚",
+            "dnd-inhibited-notification": "󱏧",
+            "dnd-inhibited-none": "󱏧"
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+
+    "custom/power": {
+        "format": "󰐥",
+        "on-click": "~/.local/bin/powermenu",
+        "tooltip": false
+    },
+}

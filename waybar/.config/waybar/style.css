@@ -1,0 +1,86 @@
+* {
+    font-family: "JetBrainsMono Nerd Font", "Noto Sans CJK JP", sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+window#waybar {
+    background: transparent;
+    color: #cad3f5;
+}
+
+/* Base style for all islands */
+#workspaces,
+#window,
+#clock,
+.modules-right > widget > box {
+    background-color: #24273a; /* Macchiato Base */
+    border: 2px solid #363a4f; /* Surface for subtle border */
+    border-radius: 16px;
+    padding: 2px 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button {
+    padding: 0 12px;
+    margin: 4px 2px;
+    color: #939ab7; /* Muted color for inactive */
+    background: transparent;
+    border-radius: 50%; /* Makes the hover/active state a circle */
+    transition: all 0.3s ease;
+}
+
+#workspaces button.focused {
+    color: #24273a;     /* Dark text for contrast */
+    background: #b7bdf8; /* Lavender accent */
+    border-radius: 12px; /* Slightly squircle shape */
+}
+
+#workspaces button:hover {
+    background: rgba(183, 189, 248, 0.2);
+    color: #cad3f5;
+}
+
+#clock {
+    color: #c6a0f6; /* Mauve */
+    font-weight: bold;
+}
+
+/* Hardware & Utils groups spacing */
+#backlight, #pulseaudio, #network, #battery, #notification, #power {
+    padding: 0 8px;
+}
+
+#pulseaudio { color: #b7bdf8; }
+#backlight { color: #7dc4e4; }
+#network { color: #8aadf4; }
+#battery { color: #a6da95; }
+
+#custom-notification {
+    background-color: #24273a;
+    color: #c6a0f6; /* Mauve */
+    border: 2px solid #363a4f;
+    border-radius: 999px;
+    padding: 0px 12px;
+    margin-left: 8px;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+#custom-notification:hover {
+    background-color: #c6a0f6;
+    color: #24273a;
+    border-color: #c6a0f6;
+}
+
+#custom-power {
+    background-color: #24273a;
+    color: #ed8796; /* Catppuccin Red */
+    border: 2px solid #363a4f;
+    border-radius: 999px; /* Ensures a pill/circle shape */
+    padding: 0px 12px;
+    margin-left: 8px;   /* Space between the last island and power */
+    margin-right: 4px;  /* Small gap from the screen edge */
+    font-size: 18px;
+    transition: all 0.3s ease;
+}

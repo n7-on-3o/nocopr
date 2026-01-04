@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# --- Catppuccin Macchiato Colors ---
+MAGENTA="\e[38;2;198;160;246m"
+LAVENDER="\e[38;2;183;189;248m"
+SAPPHIRE="\e[38;2;125;196;228m"
+TEXT="\e[38;2;202;211;245m"
+SUBTEXT="\e[38;2;165;173;203m"
+RESET="\e[0m"
+
+# --- Data Gathering ---
+OS=$(grep '^NAME=' /etc/os-release | cut -d'=' -f2 | tr -d '"')
+KERNEL=$(uname -r | cut -d'-' -f1)
+UPTIME=$(uptime -p | sed 's/up //')
+SHELL_NAME=$(basename "$SHELL")
+
+# --- The Visual Layout ---
+echo -e ""
+echo -e "  ${MAGENTA}System Overview ${RESET}"
+echo -e "  ${LAVENDER}━━━━━━━━━━━━━━━${RESET}"
+echo -e "  ${LAVENDER}󰣇  OS          ${RESET} ${TEXT}${OS}${RESET}"
+echo -e "  ${SAPPHIRE}󰒋  Kernel      ${RESET} ${TEXT}${KERNEL}${RESET}"
+echo -e "  ${MAGENTA}󱑂  Uptime      ${RESET} ${TEXT}${UPTIME}${RESET}"
+echo -e "  ${LAVENDER}󰨇  Compositor  ${RESET} ${TEXT}Niri (Scrolling)${RESET}"
+echo -e "  ${SAPPHIRE}  Terminal    ${RESET} ${TEXT}Kitty${RESET}"
+echo -e "  ${MAGENTA}󰞷  Shell       ${RESET} ${TEXT}${SHELL_NAME}${RESET}"
+echo -e ""
+echo -e "  ${MAGENTA}● ${LAVENDER}● ${SAPPHIRE}● ${TEXT}● ${SUBTEXT}● ${RESET}"
+echo -e ""
