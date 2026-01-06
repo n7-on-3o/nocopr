@@ -7,6 +7,7 @@ sudo dnf install \
     brightnessctl \
     firefox \
     flatpak \
+    fzf \
     git \
     google-noto-sans-cjk-vf-fonts \
     kitty \
