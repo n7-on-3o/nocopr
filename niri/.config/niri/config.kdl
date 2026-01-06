@@ -271,6 +271,7 @@ layout {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
 spawn-at-startup "swaync"
+spawn-at-startup "blueman-applet"
 spawn-sh-at-startup "swaybg --image ~/Pictures/Wallpapers/current --mode fill"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:

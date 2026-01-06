@@ -3,6 +3,7 @@
 sudo dnf install @hardware-support
 
 sudo dnf install \
+    blueman \
     brightnessctl \
     firefox \
     flatpak \

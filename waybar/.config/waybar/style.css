@@ -1,5 +1,5 @@
 * {
-    font-family: "JetBrainsMono Nerd Font", "Noto Sans CJK JP", sans-serif;
+    font-family: "Inter", "Symbols Nerd Font", "Noto Sans CJK JP", sans-serif;
     font-weight: bold;
     font-size: 16px;
 }
@@ -55,6 +55,19 @@ window#waybar {
 #backlight { color: #7dc4e4; }
 #network { color: #8aadf4; }
 #battery { color: #a6da95; }
+
+#bluetooth {
+    color: #8aadf4; /* Catppuccin Blue */
+    padding: 0 8px;
+}
+
+#bluetooth.connected {
+    color: #f5bde6; /* Pink/Mauve when connected for visibility */
+}
+
+#bluetooth.disabled {
+    color: #5b6078; /* Muted color when off */
+}
 
 #custom-notification {
     background-color: #24273a;

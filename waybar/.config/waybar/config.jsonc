@@ -21,7 +21,7 @@
     },
     "group/utils": {
         "orientation": "horizontal",
-        "modules": ["network", "battery"]
+        "modules": ["network", "bluetooth", "battery"]
     },
 
     "niri/workspaces": {
@@ -48,6 +48,17 @@
     "pulseaudio": { "format": "{icon} {volume}%", "format-icons": ["󰕿", "󰖀", "󰕾"] },
     "backlight": { "format": "󰃠 {percent}%" },
     "network": { "format-wifi": "", "format-disconnected": "󰖪" },
+    
+    "bluetooth": {
+        "format": "󰂯",
+        "format-disabled": "󰂲", // an icon with a line through it
+        "format-connected": "󰂱",
+        "tooltip-format": "{controller_alias}\t{controller_address}",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "on-click": "blueman-manager"
+    },
+
     "battery": { "format": "{icon} {capacity}%", "format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"] },
 
     "custom/notification": {
