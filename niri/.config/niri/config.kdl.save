@@ -271,7 +271,6 @@ layout {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
 spawn-at-startup "swaync"
-spawn-at-startup "nm-applet" "--indicator"
 spawn-at-startup "blueman-applet"
 spawn-sh-at-startup "swaybg --image ~/Pictures/Wallpapers/current --mode fill"
 
@@ -344,21 +343,22 @@ window-rule {
     // block-out-from "screencast"
 }
 
-// --- Unified Pop-up Aesthetic ---
 window-rule {
-    // Matches: Volume, Bluetooth, Network, GTK Settings, and your custom Dashboard
-    match app-id=r#"pavucontrol|blueman-manager|nm-connection-editor|nwg-look|dashboard-popup"#
+    // Match the Blueman Manager window
+    match app-id="blueman-manager"
 
+    // Make it look like a floating modal
     open-floating true
+    default-floating-width 450
+    default-floating-height 500
     
-    // Set consistent dimensions
-    default-column-width { proportion 0.6;  }
-    default-window-height { proportion 0.4;  }
-    
-    // The "Roundy" Look
-    geometry-corner-radius 16
+    // Position it in the center of the screen
+    center-column
+
+    // Apply the "roundy" aesthetic
+    geometry-corner-radius 20
     clip-to-geometry true
-    
+
     // Optional: Add a subtle border to distinguish it from the background
     focus-ring {
         width 2
@@ -665,11 +665,4 @@ binds {
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
-
-    //Mod+V { spawn "control-center" "vol"; }
-    //Mod+B { spawn "control-center" "blue"; }
-    //Mod+N { spawn "control-center" "net"; }
-    //Mod+Shift+T { spawn "control-center" "theme"; }
-    //Mod+D { spawn "control-center" "dash"; }
-    //Mod+N { spawn "control-center" "notif"; }
 }

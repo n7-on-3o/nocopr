@@ -1,0 +1,9 @@
+/* Ensure all GTK windows have rounded internal containers */
+window, .background {
+    border-radius: 20px;
+}
+
+/* Round the buttons inside Blueman */
+button {
+    border-radius: 12px;
+}

@@ -53,7 +53,16 @@ window#waybar {
 
 #pulseaudio { color: #b7bdf8; }
 #backlight { color: #7dc4e4; }
-#network { color: #8aadf4; }
+
+#network {
+    color: #8bd5ca; /* Catppuccin Teal */
+    padding: 0 8px;
+}
+
+#network.disconnected {
+   color: #ed8796; /* Red when disconnected */
+}
+
 #battery { color: #a6da95; }
 
 #bluetooth {

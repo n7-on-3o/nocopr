@@ -47,7 +47,14 @@
 
     "pulseaudio": { "format": "{icon} {volume}%", "format-icons": ["󰕿", "󰖀", "󰕾"] },
     "backlight": { "format": "󰃠 {percent}%" },
-    "network": { "format-wifi": "", "format-disconnected": "󰖪" },
+    
+    "network": {
+        "format-wifi": "",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰖪",
+        "tooltip-format": "{essid} ({signalStrength}%)",
+        "on-click": "~/.local/bin/control-center net" // Trigger our unified popup
+    },
     
     "bluetooth": {
         "format": "󰂯",

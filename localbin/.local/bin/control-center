@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+case $1 in
+    vol)   pavucontrol ;;
+    blue)  blueman-manager ;;
+    net)   nm-connection-editor ;;
+    #theme) nwg-look ;;
+    dash)  kitty --class dashboard-popup -e btop ;;
+    # Add the Notification Center toggle
+    notif) swaync-client -t -sw ;; 
+    *)     echo "Usage: pop-up {vol|blue|net|theme|notif}" ;;
+esac

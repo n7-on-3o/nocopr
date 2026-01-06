@@ -13,8 +13,10 @@ sudo dnf install \
     nautilus \
     neovim \
     niri \
+    nm-connection-editor \
     nu \
     pavucontrol \
+    plymouth-system-theme \
     stow \
     swaybg \
     swayidle \
@@ -28,6 +30,10 @@ mkdir ($nu.data-dir | path join "vendor/autoload")
 starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
 
 sudo dnf remove alacritty
+
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+
+sudo plymouth-set-default-theme -R "bgrt"
 
 sudo flatpak remote-add --if-not-exists flathub \
     https://dl.flathub.org/repo/flathub.flatpakrepo

@@ -1,0 +1,9 @@
+{
+  "positionX": "right",
+  "positionY": "top",
+  "layer": "top",
+  "control-center-margin-top": 10,
+  "control-center-margin-right": 10,
+  "control-center-width": 450,
+  "notification-window-width": 400
+}
