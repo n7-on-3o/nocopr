@@ -272,6 +272,8 @@ layout {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
 spawn-at-startup "swaync"
+spawn-sh-at-startup "wl-paste --type text --watch ~/.local/wbin/cliphist store"
+spawn-sh-at-startup "wl-paste --type image --watch ~/.local/wbin/cliphist store"
 spawn-at-startup "nm-applet" "--indicator"
 spawn-at-startup "blueman-applet"
 spawn-sh-at-startup "swaybg --image ~/Pictures/Wallpapers/current --mode fill"

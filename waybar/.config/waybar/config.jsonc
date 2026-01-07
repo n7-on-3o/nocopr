@@ -11,6 +11,7 @@
     "modules-right": [
         "group/hardware",
         "group/utils",
+	"custom/clip",
         "custom/notification",
         "custom/power"],
 
@@ -22,6 +23,13 @@
     "group/utils": {
         "orientation": "horizontal",
         "modules": ["network", "bluetooth", "battery"]
+    },
+    
+    "custom/clip": {
+        "format": "󱘝",
+        "on-click": "~/.local/wbin/clipmenu",
+        "on-click-right": "~/.local/wbin/cliphist wipe", // Clear history on right-click
+        "tooltip-format": "Clipboard History"
     },
 
     "niri/workspaces": {

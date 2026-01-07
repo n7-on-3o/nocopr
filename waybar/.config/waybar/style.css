@@ -79,6 +79,22 @@ window#waybar {
     color: #5b6078; /* Muted color when off */
 }
 
+#custom-clip {
+    background-color: #24273a;
+    color: #eed49f; /* Yellow */
+    border: 2px solid #363a4f;
+    border-radius: 999px; /* Circular */
+    padding: 0px 12px;
+    margin-left: 8px;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+#custom-clip:hover {
+    background-color: #eed49f;
+    color: #24273a;
+}
+
 #custom-notification {
     background-color: #24273a;
     color: #c6a0f6; /* Mauve */

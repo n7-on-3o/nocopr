@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# Use cliphist to list items, Fuzzel to select, and cliphist to decode back to clipboard
+~/.local/wbin/cliphist list | fuzzel --dmenu \
+    --prompt="󱘝 : " \
+    --placeholder="Search history..." \
+    --width=50 \
+    --lines=10 | ~/.local/wbin/cliphist decode | wl-copy
