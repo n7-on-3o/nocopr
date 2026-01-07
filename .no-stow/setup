@@ -7,8 +7,6 @@ sudo dnf install \
     brightnessctl \
     firefox \
     flatpak \
-    fzf \
-    git \
     google-noto-sans-cjk-vf-fonts \
     kitty \
     nautilus \
@@ -26,10 +24,6 @@ sudo dnf install \
     tuigreet \
     zip
 
-sudo curl -sS https://starship.rs/install.sh | sh
-mkdir ($nu.data-dir | path join "vendor/autoload")
-starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
-
 sudo dnf remove alacritty
 
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
@@ -40,3 +34,7 @@ sudo flatpak remote-add --if-not-exists flathub \
     https://dl.flathub.org/repo/flathub.flatpakrepo
 
 flatpak install flathub io.github.kolunmi.Bazaar
+
+sudo curl -sS https://starship.rs/install.sh | sh
+mkdir ($nu.data-dir | path join "vendor/autoload")
+starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")

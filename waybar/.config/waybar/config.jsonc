@@ -42,18 +42,24 @@
     },
     
     "clock": {
-        "format": " <span color='#b7bdf8'>󰃭</span> {:%a %d %b  <span color='#c6a0f6'>󰥔</span> %H:%M}"
+        "format": " <span color='#b7bdf8'>󰃭 </span> {:%a %d %b  <span color='#c6a0f6'>󰥔 </span> %I:%M %p}"
     },
 
     "pulseaudio": { "format": "{icon} {volume}%", "format-icons": ["󰕿", "󰖀", "󰕾"] },
     "backlight": { "format": "󰃠 {percent}%" },
-    
+     
     "network": {
-        "format-wifi": "",
+        "format-wifi": "{icon} {signalStrength}%",
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"], // From weakest to strongest
         "format-ethernet": "󰈀",
         "format-disconnected": "󰖪",
-        "tooltip-format": "{essid} ({signalStrength}%)",
-        "on-click": "~/.local/bin/control-center net" // Trigger our unified popup
+
+        // Detailed Hover Popup
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "tooltip-format-wifi": "󰖩 {essid}\n󰇚 Down: {bandwidthDownOctets}\n󰕒 Up: {bandwidthUpOctets}\n󰩟 IP: {ipaddr}",
+        "tooltip-format-ethernet": "󰈀 {ifname}\n󰇚 Down: {bandwidthDownOctets}\n󰕒 Up: {bandwidthUpOctets}",
+
+        "on-click": "~/.local/bin/control-center net"
     },
     
     "bluetooth": {
@@ -66,7 +72,10 @@
         "on-click": "blueman-manager"
     },
 
-    "battery": { "format": "{icon} {capacity}%", "format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"] },
+    "battery": {
+        "format": "{icon} {capacity}%", "format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"],
+        "on-click": "~/.local/bin/control-center dash"
+    },
 
     "custom/notification": {
         "tooltip": false,

@@ -41,6 +41,7 @@ input {
         // accel-profile "flat"
         // scroll-method "two-finger"
         // disabled-on-external-mouse
+        click-method "clickfinger"
     }
 
     mouse {
@@ -67,7 +68,7 @@ input {
 
     // Focus windows and outputs automatically when moving the mouse into them.
     // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
-    // focus-follows-mouse max-scroll-amount="0%"
+    focus-follows-mouse max-scroll-amount="0%"
 }
 
 // You can configure outputs by their name, which you can find
@@ -323,6 +324,14 @@ window-rule {
     default-column-width {}
 }
 
+window-rule {
+    match app-id="kitty" title="btop"
+    open-floating true
+
+    default-window-height { proportion 0.6; }
+    default-column-width { proportion 0.4; }
+}
+
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
     // This app-id regular expression will work for both:
@@ -354,10 +363,6 @@ window-rule {
     // Set consistent dimensions
     default-column-width { proportion 0.6;  }
     default-window-height { proportion 0.4;  }
-    
-    // The "Roundy" Look
-    geometry-corner-radius 16
-    clip-to-geometry true
     
     // Optional: Add a subtle border to distinguish it from the background
     focus-ring {

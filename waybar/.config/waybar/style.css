@@ -55,8 +55,9 @@ window#waybar {
 #backlight { color: #7dc4e4; }
 
 #network {
-    color: #8bd5ca; /* Catppuccin Teal */
-    padding: 0 8px;
+    color: #8bd5ca; /* Teal */
+    padding: 0 12px; /* Increased slightly for the text */
+    margin: 0 2px;
 }
 
 #network.disconnected {
@@ -105,4 +106,16 @@ window#waybar {
     margin-right: 4px;  /* Small gap from the screen edge */
     font-size: 18px;
     transition: all 0.3s ease;
+}
+
+/* Styling the hover popup (Tooltip) */
+tooltip {
+    background: #24273a; /* Base */
+    border: 2px solid #b7bdf8; /* Lavender Border */
+    border-radius: 12px;
+}
+
+tooltip label {
+    color: #cad3f5; /* Text */
+    padding: 10px;
 }

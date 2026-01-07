@@ -2,6 +2,22 @@
 #
 # version = "0.99.1"
 
+# Aliases
+alias ll = ls -l
+alias la = ls -la
+
+alias vim = nvim
+alias suv = sudo nvim
+
+# Archy
+alias pacin = sudo pacman -S
+alias pacrm = sudo pacman -Rsn
+alias pacup = sudo pacman -Syu
+
+# Fedora
+alias updown = sudo dnf offline-upgrade download
+alias upboot = sudo dnf offline-upgrade reboot
+
 # For more information on defining custom themes, see
 # https://www.nushell.sh/book/coloring_and_theming.html
 # And here is the theme collection
