@@ -5,6 +5,7 @@ sudo dnf install @hardware-support
 sudo dnf install \
     blueman \
     brightnessctl \
+    btop \
     firefox \
     flatpak \
     google-noto-sans-cjk-vf-fonts \
@@ -24,7 +25,7 @@ sudo dnf install \
     tuigreet \
     zip
 
-sudo dnf remove alacritty
+#sudo dnf remove alacritty
 
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
