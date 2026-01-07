@@ -8,6 +8,7 @@ sudo dnf install \
     btop \
     firefox \
     flatpak \
+    gnome-themes-extra \
     google-noto-sans-cjk-vf-fonts \
     kitty \
     nautilus \
@@ -40,8 +41,9 @@ sudo flatpak remote-add --if-not-exists flathub \
 flatpak install flathub io.github.kolunmi.Bazaar
 
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark
 xdg-user-dirs-update
 
-stow btop fuzzel kitty niri swaylock wallpapers fonts gtk-4.0 localbin nushell starship swaync waybar
+stow btop fuzzel kitty niri swaylock wallpapers fonts gtk-4.0 nushell starship swaync waybar wbin
 
 sudo curl -sS https://starship.rs/install.sh | sh

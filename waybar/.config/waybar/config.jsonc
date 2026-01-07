@@ -59,7 +59,7 @@
         "tooltip-format-wifi": "󰖩 {essid}\n󰇚 Down: {bandwidthDownOctets}\n󰕒 Up: {bandwidthUpOctets}\n󰩟 IP: {ipaddr}",
         "tooltip-format-ethernet": "󰈀 {ifname}\n󰇚 Down: {bandwidthDownOctets}\n󰕒 Up: {bandwidthUpOctets}",
 
-        "on-click": "~/.local/bin/control-center net"
+        "on-click": "~/.local/wbin/control-center net"
     },
     
     "bluetooth": {
@@ -74,7 +74,7 @@
 
     "battery": {
         "format": "{icon} {capacity}%", "format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"],
-        "on-click": "~/.local/bin/control-center dash"
+        "on-click": "~/.local/wbin/control-center dash"
     },
 
     "custom/notification": {
@@ -100,7 +100,7 @@
 
     "custom/power": {
         "format": "󰐥",
-        "on-click": "~/.local/bin/powermenu",
+        "on-click": "~/.local/wbin/powermenu",
         "tooltip": false
     },
 }
