@@ -324,14 +324,6 @@ window-rule {
     default-column-width {}
 }
 
-window-rule {
-    match app-id="kitty" title="btop"
-    open-floating true
-
-    default-window-height { proportion 0.6; }
-    default-column-width { proportion 0.4; }
-}
-
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
     // This app-id regular expression will work for both:
@@ -361,8 +353,8 @@ window-rule {
     open-floating true
     
     // Set consistent dimensions
-    default-column-width { proportion 0.6;  }
-    default-window-height { proportion 0.4;  }
+    default-column-width { proportion 0.6; }
+    default-window-height { proportion 0.4; }
     
     // Optional: Add a subtle border to distinguish it from the background
     focus-ring {
@@ -370,6 +362,13 @@ window-rule {
         active-color "#b7bdf8"   // Lavender
         inactive-color "#363a4f" // Surface
     }
+}
+
+window-rule {
+    match app-id="dashboard-popup"
+
+    default-column-width { proportion 0.6;  }
+    default-window-height { proportion 0.8;  }
 }
 
 // Example: enable rounded corners for all windows.
@@ -398,7 +397,7 @@ binds {
     Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     Mod+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Mod+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
-    Mod+Alt+P hotkey-overlay-title="Power Menu" { spawn "powermenu"; }
+    Mod+Alt+P hotkey-overlay-title="Power Menu" { spawn "~/.local/bin/powermenu"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.

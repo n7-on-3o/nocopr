@@ -8,5 +8,5 @@ case $1 in
     dash)  kitty --class dashboard-popup -e btop ;;
     # Add the Notification Center toggle
     notif) swaync-client -t -sw ;; 
-    *)     echo "Usage: pop-up {vol|blue|net|theme|notif}" ;;
+    *)     echo "Usage: control-center {vol|blue|net|theme|notif}" ;;
 esac
