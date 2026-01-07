@@ -23,19 +23,25 @@ sudo dnf install \
     swaync \
     tar \
     tuigreet \
+    xdg-user-dirs \
     zip
 
 #sudo dnf remove alacritty
-
-gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
-
+echo "Installing plymounth theme, may take a while..."
 sudo plymouth-set-default-theme -R "bgrt"
+
+sudo cp ./.no-stow/config.toml /etc/greetd/
+sudo systemctl set-default graphical.target
+sudo systemctl enable greetd
 
 sudo flatpak remote-add --if-not-exists flathub \
     https://dl.flathub.org/repo/flathub.flatpakrepo
 
 flatpak install flathub io.github.kolunmi.Bazaar
 
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+xdg-user-dirs-update
+
+stow btop fuzzel kitty niri swaylock wallpapers fonts gtk-4.0 localbin nushell starship swaync waybar
+
 sudo curl -sS https://starship.rs/install.sh | sh
-mkdir ($nu.data-dir | path join "vendor/autoload")
-starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
