@@ -8,11 +8,12 @@ sudo dnf install \
     btop \
     firefox \
     flatpak \
+    fzf \
     gnome-themes-extra \
     google-noto-sans-cjk-vf-fonts \
     kitty \
+    micro \
     nautilus \
-    neovim \
     niri \
     nm-connection-editor \
     nu \
@@ -25,7 +26,8 @@ sudo dnf install \
     tar \
     tuigreet \
     xdg-user-dirs \
-    zip
+    zip \
+    zoxide
 
 #sudo dnf remove alacritty
 echo "Installing plymounth theme, may take a while..."
@@ -44,6 +46,6 @@ gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark
 xdg-user-dirs-update
 
-stow btop fuzzel kitty niri swaylock wallpapers fonts gtk-4.0 nushell starship swaync waybar wbin
+stow btop fonts fuzzel gtk-4.0 kitty micro niri nushell starship swaylock swaync wallpapers wbin
 
 sudo curl -sS https://starship.rs/install.sh | sh

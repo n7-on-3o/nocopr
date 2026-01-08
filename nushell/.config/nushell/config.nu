@@ -9,6 +9,8 @@ alias la = ls -la
 alias vim = nvim
 alias suv = sudo nvim
 
+alias mi = micro
+
 # Archy
 alias pacin = sudo pacman -S
 alias pacrm = sudo pacman -Rsn

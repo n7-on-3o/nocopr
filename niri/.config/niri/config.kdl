@@ -19,7 +19,6 @@ input {
             // If this section is empty, niri will fetch xkb settings
             // from org.freedesktop.locale1. You can control these using
             // localectl set-x11-keymap.
-            layout "ie"
         }
 
         // Enable numlock on startup, omitting this setting disables it.
@@ -376,11 +375,22 @@ window-rule {
     default-window-height { proportion 0.8;  }
 }
 
+window-rule {
+    match is-focused=true
+    opacity 0.95
+}
+
+window-rule {
+    match is-focused=false
+    opacity 0.85
+}
+
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
+    draw-border-with-background false
 }
 
 binds {
