@@ -30,7 +30,7 @@ It has been a challenge to see how I can build a complete system from a base Fed
 ## 📦 Dependencies
 Ensure you have the following installed before applying the configs:
 - **Fonts:** `JetBrainsMono Nerd Font`, `Noto Sans CJK JP`, `Monaspace`
-- **Tools:** `swayidle`, `brightnessctl`, `pavucintrol`
+- **Tools:** `swayidle`, `brightnessctl`, `pavucontrol`
 
 ---
 
@@ -38,6 +38,8 @@ Ensure you have the following installed before applying the configs:
 1. Clone the repository:
    ```bash
    git clone [https://github.com/n7-on-3o/nocopr.git](https://github.com/n7-on-3o/nocopr.git) ~/nocopr```
-2. Run .no-stow/setup (Pray the linux ods the it works...)
-3. Stow the rest
+2. ```bash
+   cd ~/nocopr
+3. Run .no-stow/setup (Pray the linux gods that it works...)
+4. Reboot
 

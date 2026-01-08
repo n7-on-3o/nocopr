@@ -675,10 +675,5 @@ binds {
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
 
-    //Mod+V { spawn "control-center" "vol"; }
-    //Mod+B { spawn "control-center" "blue"; }
-    //Mod+N { spawn "control-center" "net"; }
-    //Mod+Shift+T { spawn "control-center" "theme"; }
-    //Mod+D { spawn "control-center" "dash"; }
-    //Mod+N { spawn "control-center" "notif"; }
+    Mod+Y { spawn "~/.local/wbin/clipmenu"; }
 }
