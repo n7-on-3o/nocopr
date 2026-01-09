@@ -1,8 +1,19 @@
 #!/usr/bin/env bash
 
-# Use cliphist to list items, Fuzzel to select, and cliphist to decode back to clipboard
-~/.local/wbin/cliphist list | fuzzel --dmenu \
+# 1. Get the list and selection
+# We pipe the selected line to awk to grab just the first field (the ID)
+RESULT=$(~/.local/scripts/cliphist list | fuzzel --dmenu \
     --prompt="󱘝 : " \
-    --placeholder="Search history..." \
+    --placeholder="検索履歴..." \
     --width=50 \
-    --lines=10 | ~/.local/wbin/cliphist decode | wl-copy
+    --lines=10)
+
+# 2. Check if the user canceled
+[ -z "$RESULT" ] && exit 0
+
+# 3. Extract the ID and decode it
+# 'awk {print $1}' grabs the ID (e.g., "0", "1", "2")
+echo "$RESULT" | awk '{print $1}' | cliphist decode | wl-copy
+
+# 4. Optional: Send a tiny notification that it worked
+notify-send "Clipboard" "Copied to clipboard!" -i clipboard

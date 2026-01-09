@@ -18,7 +18,6 @@ sudo dnf install \
     nautilus \
     niri \
     nm-connection-editor \
-    nu \
     pavucontrol \
     plymouth-system-theme \
     slurp \
@@ -30,7 +29,8 @@ sudo dnf install \
     tuigreet \
     xdg-user-dirs \
     zip \
-    zoxide
+    zoxide \
+    zsh
 
 #sudo dnf remove alacritty
 echo "Installing plymounth theme, may take a while..."
@@ -49,6 +49,6 @@ gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark
 xdg-user-dirs-update
 
-stow btop fonts fuzzel gtk-4.0 kitty mako micro niri nushell scripts starship swaylock wallpapers
+stow btop fonts fuzzel gtk-4.0 kitty mako micro niri scripts starship swaylock wallpapers zsh
 
 sudo curl -sS https://starship.rs/install.sh | sh

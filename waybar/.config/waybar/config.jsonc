@@ -28,13 +28,14 @@
     "custom/clip": {
         "format": "󱘝",
         "on-click": "~/.local/scripts/clip-menu",
-        "on-click-right": "~/.local/scripts/clip-history wipe", // Clear history on right-click
+        "on-click-right": "~/.local/scripts/cliphist wipe", // Clear history on right-click
         "tooltip-format": "Clipboard History"
     },
 
     "custom/snip": {
         "format": "󰄀",
         "on-click": "~/.local/scripts/snipper",
+        "on-click-right": "~/.local/scripts/snipper full",
         "tooltip-format": "Take a Screenshot"
     },
 
