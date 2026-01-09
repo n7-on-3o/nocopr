@@ -11,7 +11,9 @@ sudo dnf install \
     fzf \
     gnome-themes-extra \
     google-noto-sans-cjk-vf-fonts \
+    grim \
     kitty \
+    mako \
     micro \
     nautilus \
     niri \
@@ -19,10 +21,11 @@ sudo dnf install \
     nu \
     pavucontrol \
     plymouth-system-theme \
+    slurp \
     stow \
+    swappy \
     swaybg \
     swayidle \
-    swaync \
     tar \
     tuigreet \
     xdg-user-dirs \
@@ -46,6 +49,6 @@ gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark
 xdg-user-dirs-update
 
-stow btop fonts fuzzel gtk-4.0 kitty micro niri nushell starship swaylock swaync wallpapers wbin
+stow btop fonts fuzzel gtk-4.0 kitty mako micro niri nushell scripts starship swaylock wallpapers
 
 sudo curl -sS https://starship.rs/install.sh | sh

@@ -270,9 +270,9 @@ layout {
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
-spawn-at-startup "swaync"
-spawn-sh-at-startup "wl-paste --type text --watch ~/.local/wbin/cliphist store"
-spawn-sh-at-startup "wl-paste --type image --watch ~/.local/wbin/cliphist store"
+spawn-at-startup "mako"
+spawn-sh-at-startup "wl-paste --type text --watch ~/.local/scripts/clip-history store"
+spawn-sh-at-startup "wl-paste --type image --watch ~/.local/scrits/clip-history store"
 spawn-at-startup "nm-applet" "--indicator"
 spawn-at-startup "blueman-applet"
 spawn-sh-at-startup "swaybg --image ~/Pictures/Wallpapers/current --mode fill"
@@ -412,7 +412,7 @@ binds {
     Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     Mod+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Mod+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
-    Mod+Alt+P hotkey-overlay-title="Power Menu" { spawn "~/.local/wbin/powermenu"; }
+    Mod+Alt+P hotkey-overlay-title="Power Menu" { spawn "~/.local/scripts/power-menu"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
@@ -667,6 +667,9 @@ binds {
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
 
+    Mod+Shift+1 { spawn "~/.local/scripts/snipper" "full";  }
+	Mod+Shift+2 { spawn "~/.local/scripts/snipper";  }
+
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here
     // so they may, for example, forward the key presses as-is to a remote machine.
@@ -685,5 +688,5 @@ binds {
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
 
-    Mod+Y { spawn "~/.local/wbin/clipmenu"; }
+    Mod+Y { spawn "~/.local/scritps/clip-menu"; }
 }

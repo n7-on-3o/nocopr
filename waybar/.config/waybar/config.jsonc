@@ -11,8 +11,8 @@
     "modules-right": [
         "group/hardware",
         "group/utils",
-	"custom/clip",
-        "custom/notification",
+	    "custom/clip",
+	    "custom/snip",
         "custom/power"],
 
     // Grouping modules to create unified islands
@@ -27,9 +27,15 @@
     
     "custom/clip": {
         "format": "󱘝",
-        "on-click": "~/.local/wbin/clipmenu",
-        "on-click-right": "~/.local/wbin/cliphist wipe", // Clear history on right-click
+        "on-click": "~/.local/scripts/clip-menu",
+        "on-click-right": "~/.local/scripts/clip-history wipe", // Clear history on right-click
         "tooltip-format": "Clipboard History"
+    },
+
+    "custom/snip": {
+        "format": "󰄀",
+        "on-click": "~/.local/scripts/snipper",
+        "tooltip-format": "Take a Screenshot"
     },
 
     "niri/workspaces": {
@@ -67,7 +73,7 @@
         "tooltip-format-wifi": "󰖩 {essid}\n󰇚 Down: {bandwidthDownOctets}\n󰕒 Up: {bandwidthUpOctets}\n󰩟 IP: {ipaddr}",
         "tooltip-format-ethernet": "󰈀 {ifname}\n󰇚 Down: {bandwidthDownOctets}\n󰕒 Up: {bandwidthUpOctets}",
 
-        "on-click": "~/.local/wbin/control-center net"
+        "on-click": "~/.local/scripts/control-center net"
     },
     
     "bluetooth": {
@@ -82,33 +88,12 @@
 
     "battery": {
         "format": "{icon} {capacity}%", "format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"],
-        "on-click": "~/.local/wbin/control-center dash"
-    },
-
-    "custom/notification": {
-        "tooltip": false,
-        "format": "{icon}",
-        "format-icons": {
-            "notification": "󱅫",
-            "none": "󰂚",
-            "dnd-notification": "󱏧",
-            "dnd-none": "󱏧",
-            "inhibited-notification": "󱅫",
-            "inhibited-none": "󰂚",
-            "dnd-inhibited-notification": "󱏧",
-            "dnd-inhibited-none": "󱏧"
-        },
-        "return-type": "json",
-        "exec-if": "which swaync-client",
-        "exec": "swaync-client -swb",
-        "on-click": "swaync-client -t -sw",
-        "on-click-right": "swaync-client -d -sw",
-        "escape": true
+        "on-click": "~/.local/scripts/control-center dash"
     },
 
     "custom/power": {
         "format": "󰐥",
-        "on-click": "~/.local/wbin/powermenu",
+        "on-click": "~/.local/scripts/power-menu",
         "tooltip": false
     },
 }

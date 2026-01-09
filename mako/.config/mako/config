@@ -1,0 +1,21 @@
+# Catppuccin Macchiato Palette
+background-color=#24273a
+text-color=#cad3f5
+border-color=#b7bdf8
+progress-color=over #363a4f
+
+# Roundy Aesthetic
+border-size=2
+border-radius=16
+padding=15
+margin=10
+
+# Behavior
+font=JetBrainsMono Nerd Font 10
+default-timeout=5000
+layer=overlay
+anchor=top-right
+
+[urgency=high]
+border-color=#ed8796
+default-timeout=0
