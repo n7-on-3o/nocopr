@@ -205,6 +205,11 @@ window-rule {
 }
 
 window-rule {
+    match app-id="swappy"
+    open-floating true
+}
+
+window-rule {
     match is-focused=true
     opacity 0.95
 }
@@ -381,9 +386,13 @@ binds {
 
     Mod+T { toggle-column-tabbed-display; }
 
-    Mod+Shift+1 { screenshot; }
-    Mod+Shift+2 { screenshot-window; }
-    Mod+Shift+3 { screenshot-screen; }
+    Mod+Shift+1 { spawn "~/.local/scripts/snip"; }
+    Mod+Shift+2 { spawn "~/.local/scripts/snip" "full"; }
+    Mod+Shift+4 { screenshot-window; }
+    Mod+Alt+1 { spawn "~/.local/scripts/snip"; }
+    Mod+Alt+2 { spawn "~/.local/scripts/snip" "full"; }
+    Mod+Alt+4 { screenshot-window; }
+
 
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo dnf install @hardware-support
+#sudo dnf install @hardware-support
 
 sudo dnf install \
     blueman \
@@ -11,6 +11,7 @@ sudo dnf install \
     fzf \
     gnome-themes-extra \
     google-noto-sans-cjk-vf-fonts \
+    grim \
     kitty \
     mako \
     micro \
@@ -18,12 +19,16 @@ sudo dnf install \
     niri \
     nm-connection-editor \
     pavucontrol \
+    pipewire-utils \
     plymouth-system-theme \
+    slurp \
     stow \
+    swappy \
     swaybg \
     swayidle \
     tar \
     tuigreet \
+    wl-clipboard \
     xdg-user-dirs \
     zip \
     zoxide \
@@ -46,6 +51,6 @@ gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark
 xdg-user-dirs-update
 
-stow btop fonts fuzzel gtk-4.0 kitty mako micro niri scripts starship swaylock wallpapers zsh
+stow btop fonts fuzzel gtk-4.0 kitty mako micro niri scripts starship swappy swaylock wallpapers waybar zsh
 
 sudo curl -sS https://starship.rs/install.sh | sh

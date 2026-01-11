@@ -34,8 +34,8 @@
 
     "custom/snip": {
         "format": "󰄀",
-        "on-click": "niri msg action screenshot",
-        "on-click-right": "niri msg action screenshot-screen",
+        "on-click": "~/.local/scripts/snip",
+        "on-click-right": "~/.local/scripts/snip full",
         "tooltip-format": "L: Area Snip | R: Full Screen"
     },
 
