@@ -34,9 +34,9 @@
 
     "custom/snip": {
         "format": "󰄀",
-        "on-click": "~/.local/scripts/snipper",
-        "on-click-right": "~/.local/scripts/snipper full",
-        "tooltip-format": "Take a Screenshot"
+        "on-click": "niri msg action screenshot",
+        "on-click-right": "niri msg action screenshot-screen",
+        "tooltip-format": "L: Area Snip | R: Full Screen"
     },
 
     "niri/workspaces": {
@@ -57,7 +57,8 @@
     },
     
     "clock": {
-        "format": " <span color='#b7bdf8'>󰃭 </span> {:%a %d %b  <span color='#c6a0f6'>󰥔 </span> %I:%M %p}"
+        "format": " <span color='#b7bdf8'>󰃭 </span> {:%a %d %b  <span color='#c6a0f6'>󰥔 </span> %I:%M %p}",
+        "tooltip": false
     },
 
     "pulseaudio": { "format": "{icon} {volume}%", "format-icons": ["󰕿", "󰖀", "󰕾"] },

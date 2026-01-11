@@ -11,7 +11,6 @@ sudo dnf install \
     fzf \
     gnome-themes-extra \
     google-noto-sans-cjk-vf-fonts \
-    grim \
     kitty \
     mako \
     micro \
@@ -20,9 +19,7 @@ sudo dnf install \
     nm-connection-editor \
     pavucontrol \
     plymouth-system-theme \
-    slurp \
     stow \
-    swappy \
     swaybg \
     swayidle \
     tar \

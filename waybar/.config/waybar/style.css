@@ -26,7 +26,7 @@ window#waybar {
     margin: 4px 2px;
     color: #939ab7; /* Muted color for inactive */
     background: transparent;
-    border-radius: 50%; /* Makes the hover/active state a circle */
+    border-radius: 12px; /* Makes the hover/active state a circle */
     transition: all 0.3s ease;
 }
 
@@ -93,6 +93,8 @@ window#waybar {
 #custom-clip:hover {
     background-color: #eed49f;
     color: #24273a;
+    transition: all 0.3s ease;
+
 }
 
 #custom-snip {
@@ -106,6 +108,13 @@ window#waybar {
     transition: all 0.3s ease;    
 }
 
+#custom-snip:hover {
+    background-color: #a6da95;
+    color: #24273a;
+    transition: all 0.3s ease;
+}
+
+
 #custom-power {
     background-color: #24273a;
     color: #ed8796; /* Catppuccin Red */
@@ -114,6 +123,12 @@ window#waybar {
     padding: 0px 12px;
     margin-left: 8px;   /* Space between the last island and power */
     margin-right: 4px;  /* Small gap from the screen edge */
+    transition: all 0.3s ease;
+}
+
+#custom-power:hover {
+    background-color: #ed8796;
+    color: #24273a;
     transition: all 0.3s ease;
 }
 
