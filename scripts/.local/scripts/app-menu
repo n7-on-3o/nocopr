@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+FLOCK="$XDG_RUNTIME_DIR/fuzzel-$WAYLAND_DISPLAY.lock"
+
+if pgrep -f fuzzel.*app-menu >/dev/null; then
+    exit 0
+fi
+
+if [ -f $FLOCK ]; then
+    killall fuzzel
+    rm $FLOCK
+fi
+
+fuzzel --namespace app-menu

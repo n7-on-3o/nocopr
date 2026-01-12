@@ -1,28 +1,40 @@
 #!/usr/bin/env bash
 
-# Setup
+# --- 1. PREVENT MULTIPLE INSTANCES ---
+# If slurp is already running, the user is currently selecting. Exit.
+if pgrep -x "slurp" > /dev/null; then
+    exit 0
+fi
+
+# If swappy is already running, an editor is already open. Exit.
+if pgrep -x "swappy" > /dev/null; then
+    exit 0
+fi
+
+# --- 2. SETUP ---
 DIR="$HOME/Pictures/Screenshots"
 mkdir -p "$DIR"
-# Sound file (standard location on most distros)
 SOUND="/usr/share/sounds/freedesktop/stereo/camera-shutter.oga"
 
-# Function to play shutter sound in the background
 play_sound() {
     if [ -f "$SOUND" ]; then
         pw-play "$SOUND" &
     fi
 }
 
-# Capture Logic
+# --- 3. CAPTURE LOGIC ---
 if [ "$1" == "full" ]; then
     play_sound
-    # Capture full screen and pipe to swappy
     grim - | swappy -f -
 else
+    # The 'slurp' overlay with your Catppuccin Blue theme
     AREA=$(slurp -b "#24273aaa" -c "#8aadf4" -s "#8aadf422" -w 2)
-    [ -z "$AREA" ] && exit 0
+    
+    # If the user cancels (Esc or Right Click), AREA is empty
+    if [ -z "$AREA" ]; then
+        exit 0
+    fi
     
     play_sound
-    # Capture area and pipe to swappy
     grim -g "$AREA" - | swappy -f -
 fi

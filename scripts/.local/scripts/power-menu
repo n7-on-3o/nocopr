@@ -7,8 +7,21 @@
 # 󰗼 ログアウト (Logout)
 # 󰌾 ロック (Lock)
 
+
+FLOCK="$XDG_RUNTIME_DIR/fuzzel-$WAYLAND_DISPLAY.lock"
+
+if pgrep -f fuzzel.*power-menu >/dev/null; then 
+    exit 0
+fi
+
+if [ -f $FLOCK ]; then
+    killall fuzzel
+    rm $FLOCK
+fi
+
 SELECTION=$(echo -e "󰐥 Poweroff\n󰜉 Reboot\n󰤄 Suspend\n󰗼 Logout\n󰌾 Lock" | \
-    fuzzel --dmenu \
+    fuzzel --namespace power-menu \
+           --dmenu \
            --lines 5 \
            --width 15 \
            --tabs 4 \

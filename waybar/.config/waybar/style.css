@@ -26,14 +26,14 @@ window#waybar {
     margin: 4px 2px;
     color: #939ab7; /* Muted color for inactive */
     background: transparent;
-    border-radius: 12px; /* Makes the hover/active state a circle */
+    border-radius: 12px;
     transition: all 0.3s ease;
 }
 
 #workspaces button.focused {
-    color: #24273a;     /* Dark text for contrast */
-    background: #b7bdf8; /* Lavender accent */
-    border-radius: 12px; /* Slightly squircle shape */
+    color: #24273a;
+    background: #b7bdf8;
+    border-radius: 12px;
 }
 
 #workspaces button:hover {
@@ -42,104 +42,93 @@ window#waybar {
 }
 
 #window {
-	color: #f0c6c6;
+    color: #f0c6c6;
 }
 
+/* --- CLOCK --- */
 #clock {
     color: #c6a0f6; /* Mauve */
-    font-weight: bold;
+    transition: all 0.3s ease;
 }
-
-/* Hardware & Utils groups spacing */
-#backlight, #pulseaudio, #network, #bluetooth, #battery, #power {
-    padding: 0 8px;
+/*
+#clock:hover {
+    background-color: #c6a0f6;
+    color: #24273a;
+}
+*/
+/* --- HARDWARE & UTILS (The Right Side) --- */
+/* These modules are inside a box, so we give them their own pill shape on hover */
+#backlight, #pulseaudio, #network, #bluetooth, #battery {
+    padding: 0 10px;
+    margin: 2px 0;
+    transition: all 0.3s ease;
+    border-radius: 12px;
 }
 
 #pulseaudio { color: #b7bdf8; }
-#backlight { color: #7dc4e4; }
+#pulseaudio:hover { background-color: #b7bdf8; color: #24273a; }
 
-#network {
-    color: #8bd5ca; /* Teal */
+#backlight { color: #7dc4e4; }
+#backlight:hover { background-color: #7dc4e4; color: #24273a; }
+
+/* --- UPDATED HARDWARE STATES --- */
+
+/* Network */
+#network { color: #8bd5ca; }
+#network:hover { background-color: #8bd5ca; color: #24273a; }
+
+/* Network Disconnected - High Contrast Red */
+#network.disconnected { color: #ed8796; }
+#network.disconnected:hover { 
+    background-color: #ed8796; 
+    color: #24273a; 
 }
 
-#network.disconnected {
-   color: #ed8796; /* Red when disconnected */
+/* Bluetooth */
+#bluetooth { color: #8aadf4; }
+#bluetooth:hover { background-color: #8aadf4; color: #24273a; }
+
+/* Bluetooth Connected - Pink/Mauve */
+#bluetooth.connected { color: #f5bde6; }
+#bluetooth.connected:hover { background-color: #f5bde6; color: #24273a; }
+
+/* Bluetooth Disabled - Muted Gray/Steel */
+#bluetooth.disabled { color: #5b6078; }
+#bluetooth.disabled:hover { 
+    background-color: #5b6078; 
+    color: #cad3f5; /* Light text for dark gray background */
 }
 
 #battery { color: #a6da95; }
+#battery:hover { background-color: #a6da95; color: #24273a; }
 
-#bluetooth {
-    color: #8aadf4; /* Catppuccin Blue */
-}
-
-#bluetooth.connected {
-    color: #f5bde6; /* Pink/Mauve when connected for visibility */
-}
-
-#bluetooth.disabled {
-    color: #5b6078; /* Muted color when off */
-}
-
-#custom-clip {
+/* --- CUSTOM STANDALONE PILLS --- */
+#custom-clip, #custom-snip, #custom-power {
     background-color: #24273a;
-    color: #eed49f; /* Yellow */
     border: 2px solid #363a4f;
-    border-radius: 999px; /* Circular */
+    border-radius: 999px;
     padding: 0px 12px;
     margin-left: 8px;
     transition: all 0.3s ease;
 }
 
-#custom-clip:hover {
-    background-color: #eed49f;
-    color: #24273a;
-    transition: all 0.3s ease;
+#custom-clip { color: #eed49f; }
+#custom-clip:hover { background-color: #eed49f; color: #24273a; }
 
-}
+#custom-snip { color: #a6da95; margin-right: 4px; }
+#custom-snip:hover { background-color: #a6da95; color: #24273a; }
 
-#custom-snip {
-    background-color: #24273a;
-    color: #a6da95; /* Green */
-    border: 2px solid #363a4f;
-    border-radius: 999px; /* Ensures a pill/circle shape */
-    padding: 0px 12px;
-    margin-left: 8px;   /* Space between the last island and power */
-    margin-right: 4px;  /* Small gap from the screen edge */
-    transition: all 0.3s ease;    
-}
+#custom-power { color: #ed8796; margin-right: 4px; }
+#custom-power:hover { background-color: #ed8796; color: #24273a; }
 
-#custom-snip:hover {
-    background-color: #a6da95;
-    color: #24273a;
-    transition: all 0.3s ease;
-}
-
-
-#custom-power {
-    background-color: #24273a;
-    color: #ed8796; /* Catppuccin Red */
-    border: 2px solid #363a4f;
-    border-radius: 999px; /* Ensures a pill/circle shape */
-    padding: 0px 12px;
-    margin-left: 8px;   /* Space between the last island and power */
-    margin-right: 4px;  /* Small gap from the screen edge */
-    transition: all 0.3s ease;
-}
-
-#custom-power:hover {
-    background-color: #ed8796;
-    color: #24273a;
-    transition: all 0.3s ease;
-}
-
-/* Styling the hover popup (Tooltip) */
+/* Tooltip Styling */
 tooltip {
-    background: #24273a; /* Base */
-    border: 2px solid #b7bdf8; /* Lavender Border */
+    background: #24273a;
+    border: 2px solid #b7bdf8;
     border-radius: 12px;
 }
 
 tooltip label {
-    color: #cad3f5; /* Text */
+    color: #cad3f5;
     padding: 10px;
 }

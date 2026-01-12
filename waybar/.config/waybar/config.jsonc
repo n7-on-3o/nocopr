@@ -25,13 +25,6 @@
         "modules": ["network", "bluetooth", "battery"]
     },
     
-    "custom/clip": {
-        "format": "󱘝",
-        "on-click": "~/.local/scripts/clip-menu",
-        "on-click-right": "~/.local/scripts/cliphist wipe", // Clear history on right-click
-        "tooltip-format": "Clipboard History"
-    },
-
     "custom/snip": {
         "format": "󰄀",
         "on-click": "~/.local/scripts/snip",
@@ -93,9 +86,20 @@
         "on-click": "~/.local/scripts/control-center dash"
     },
 
+    "custom/clip": {
+        "format": "󱘝",
+        "on-click": "~/.local/scripts/clip-menu",
+        "on-click-right": "~/.local/scripts/clip-menu wipe", // Clear history on right-click
+        "tooltip-format": "L: Clipboard History | R: Wipe Clipboard"
+    },
+
     "custom/power": {
         "format": "󰐥",
+        "exec": "tuned-adm active | awk '{print $NF}'",
+        "interval": 5,
         "on-click": "~/.local/scripts/power-menu",
-        "tooltip": false
+        "on-click-right": "~/.local/scripts/tuned-menu",
+        "tooltip": true,
+        "tooltip-format": "󰓅 {}"
     },
 }

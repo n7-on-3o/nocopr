@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+FLOCK="$XDG_RUNTIME_DIR/fuzzel-$WAYLAND_DISPLAY.lock"
+
+if pgrep -f fuzzel.*tuned-menu >/dev/null; then
+    exit 0
+fi
+
+if [ -f $FLOCK ]; then
+    killall fuzzel
+    rm $FLOCK
+fi
+
+# 1. Get current profile to show in the prompt
+CURRENT=$(tuned-adm active | awk '{print $NF}')
+
+# 2. Get list of available profiles, excluding the header text
+# We'll use a few common ones as defaults if you prefer a shorter list
+PROFILES=$(tuned-adm list | grep -E "^- " | awk '{print $2}')
+
+# 3. Show menu via fuzzel
+SELECTED=$(echo "$PROFILES" | fuzzel --namespace tuned-menu --dmenu --prompt="󰓅 $CURRENT " --lines=6 --width=24)
+
+# 4. Apply selection
+if [ -n "$SELECTED" ]; then
+    # We use sudo here; see Step 2 for making this passwordless
+    tuned-adm profile "$SELECTED"
+    notify-send "Power Profile" "Switched to $SELECTED" -i "power-profile"
+fi
